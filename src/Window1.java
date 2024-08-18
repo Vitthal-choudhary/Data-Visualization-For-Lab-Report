@@ -12,6 +12,7 @@ public class Window1
     JFrame frame;
     Labels title, name_label, age_label, sex_label, Choice_Label;
     Fields name_field, age_field;
+    Tests_Choice t;
 
     Window1(){
         frame = new JFrame("Lab Assist");
@@ -59,7 +60,7 @@ public class Window1
         panel.setBounds(380,390,500,100);
         frame.add(panel);
 
-        Tests_Choice t = new Tests_Choice();
+        t = new Tests_Choice();
         t.setBounds(380,480,850,300);
         frame.add(t);
 
