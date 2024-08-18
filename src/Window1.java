@@ -1,6 +1,7 @@
 import Components.Fields;
 import Components.Labels;
 import Panels.Gender;
+import Panels.Tests_Choice;
 
 import javax.swing.*;
 import java.awt.*;
@@ -57,6 +58,10 @@ public class Window1
         Gender panel = new Gender();
         panel.setBounds(380,390,500,100);
         frame.add(panel);
+
+        Tests_Choice t = new Tests_Choice();
+        t.setBounds(380,480,850,300);
+        frame.add(t);
 
         frame.setLayout(null);
 

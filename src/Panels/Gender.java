@@ -31,9 +31,10 @@ public class Gender extends JPanel implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()=="Male"){
+        if (male.isSelected()){
             System.out.println("Male");
-        } else if (e.getSource() == "Female") {
+        }
+        else if (female.isSelected()){
             System.out.println("Female");
         }
     }
