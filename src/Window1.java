@@ -1,3 +1,4 @@
+import Components.Buttons;
 import Components.Fields;
 import Components.Labels;
 import Panels.Gender;
@@ -5,14 +6,17 @@ import Panels.Tests_Choice;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class Window1
+public class Window1 implements ActionListener
 {
     JFrame frame;
     Labels title, name_label, age_label, sex_label, Choice_Label;
     Fields name_field, age_field;
     Tests_Choice t;
+    public Buttons butt;
 
     Window1(){
         frame = new JFrame("Lab Assist");
@@ -64,9 +68,22 @@ public class Window1
         t.setBounds(380,480,850,300);
         frame.add(t);
 
+        butt = new Buttons("Proceed");
+        butt.setBounds(1100,350,300,100);
+        butt.addActionListener(this);
+        frame.add(butt);
+
         frame.setLayout(null);
 
         frame.setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==butt){
+            System.out.println(name_field.getText());
+            System.out.println(age_field.getText());
+        }
+
+    }
 }

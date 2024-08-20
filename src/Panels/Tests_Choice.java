@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class Tests_Choice extends JPanel implements ActionListener
 {
     CheckBox[] checkBox;
+    String[] test;
 
     public Tests_Choice(){
         checkBox = new CheckBox[10];
@@ -26,6 +27,11 @@ public class Tests_Choice extends JPanel implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        for (int i=0; i<=9; i++){
+            if (checkBox[i].isSelected()){
+                System.out.println(test[i]);
+            }
+        }
 
     }
 }
