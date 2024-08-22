@@ -1,24 +1,26 @@
-import Components.Buttons;
-import Components.Fields;
-import Components.Labels;
-import Panels.Gender;
-import Panels.Tests_Choice;
-
+import Components.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 
 public class Window1 implements ActionListener
 {
     JFrame frame;
+    JPanel pan;
     Labels title, name_label, age_label, sex_label, Choice_Label;
     Fields name_field, age_field;
-    Tests_Choice t;
-    public Buttons butt;
+    Buttons butt;
+    Radios male, female;
+    CheckBox[] checkBox = new CheckBox[10];
+    String[] test = {"Complete Blood Test", "Urinalysis", "Thyroid Test",
+            "Diabetes Test", "Common Viral Fevers", "Sexually Transmitted Diseases",
+            "Cholesterol Test", "Sputum Culture", "Drug Test", "Allergy Test"};
 
     Window1(){
+        //Frame creation
         frame = new JFrame("Lab Assist");
         frame.getContentPane().setBackground(Color.orange);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,29 +62,61 @@ public class Window1 implements ActionListener
         age_field.setBounds(380,270,500,100);
         frame.add(age_field);
 
-        Gender panel = new Gender();
-        panel.setBounds(380,390,500,100);
-        frame.add(panel);
+        //Radio Buttons for gender
+        male = new Radios("Male");
+        male.addActionListener(this);
+        female = new Radios("Female");
+        female.addActionListener(this);
+        ButtonGroup grp = new ButtonGroup();
+        grp.add(male);
+        grp.add(female);
+        male.setBounds(380,390,250,100);
+        female.setBounds(630,390,250,100);
+        frame.add(male);
+        frame.add(female);
 
-        t = new Tests_Choice();
-        t.setBounds(380,480,850,300);
-        frame.add(t);
+        //Panel with Choice CheckBox
+        pan = new JPanel();
+        pan.setLayout(new GridLayout(5,3));
+        for (int i=0; i<=9; i++){
+            checkBox[i] = new CheckBox(test[i]);
+            checkBox[i].addActionListener(this);
+            pan.add(checkBox[i]);
+        }
+        pan.setBounds(380,490,900,300);
+        frame.add(pan);
 
+        //Proceed Button
         butt = new Buttons("Proceed");
         butt.setBounds(1100,350,300,100);
         butt.addActionListener(this);
         frame.add(butt);
 
         frame.setLayout(null);
-
         frame.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==butt){
-            System.out.println(name_field.getText());
-            System.out.println(age_field.getText());
+            if (Objects.equals(name_field.getText(), "") || Objects.equals(age_field.getText(),"")){
+                JOptionPane.showMessageDialog(null, "Fill the Details", "Warning", JOptionPane.ERROR_MESSAGE);
+            }
+            else {
+                System.out.println(name_field.getText());
+                System.out.println(age_field.getText());
+                if (male.isSelected())
+                    System.out.println("Male");
+                else if (female.isSelected())
+                    System.out.println("Female");
+                for (int i = 0; i <= 9; i++) {
+                    if (checkBox[i].isSelected()) {
+                        System.out.println(test[i]);
+                    }
+                }
+                frame.dispose();
+                Window2 win2 = new Window2();
+            }
         }
 
     }
