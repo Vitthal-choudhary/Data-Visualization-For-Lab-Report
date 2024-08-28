@@ -14,10 +14,10 @@ public class Window1 implements ActionListener
     Fields name_field, age_field;
     Buttons butt;
     Radios male, female;
-    CheckBox[] checkBox = new CheckBox[10];
+    CheckBox[] checkBox = new CheckBox[8];
     String[] test = {"Complete Blood Test", "Urinalysis", "Thyroid Test",
-            "Diabetes Test", "Common Viral Fevers", "Sexually Transmitted Diseases",
-            "Cholesterol Test", "Sputum Culture", "Drug Test", "Allergy Test"};
+            "Diabetes Test", "Sexually Transmitted Diseases",
+            "Cholesterol Test", "Drug Test", "Allergy Test"};
 
     Window1(){
         //Frame creation
@@ -77,8 +77,8 @@ public class Window1 implements ActionListener
 
         //Panel with Choice CheckBox
         pan = new JPanel();
-        pan.setLayout(new GridLayout(5,3));
-        for (int i=0; i<=9; i++){
+        pan.setLayout(new GridLayout(4,2));
+        for (int i=0; i<=7; i++){
             checkBox[i] = new CheckBox(test[i]);
             checkBox[i].addActionListener(this);
             pan.add(checkBox[i]);
@@ -109,7 +109,7 @@ public class Window1 implements ActionListener
                     System.out.println("Male");
                 else if (female.isSelected())
                     System.out.println("Female");
-                for (int i = 0; i <= 9; i++) {
+                for (int i = 0; i <= 7; i++) {
                     if (checkBox[i].isSelected()) {
                         System.out.println(test[i]);
                     }
