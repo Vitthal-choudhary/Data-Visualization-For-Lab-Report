@@ -1,3 +1,5 @@
+package Windows;
+
 import Components.*;
 import javax.swing.*;
 import java.awt.*;
@@ -13,13 +15,14 @@ public class Window1 implements ActionListener
     Labels title, name_label, age_label, sex_label, Choice_Label;
     Fields name_field, age_field;
     Buttons butt;
+    ButtonGroup grp1, grp2;
     Radios male, female;
     CheckBox[] checkBox = new CheckBox[8];
     String[] test = {"Complete Blood Test", "Urinalysis", "Thyroid Test",
             "Diabetes Test", "Sexually Transmitted Diseases",
             "Cholesterol Test", "Drug Test", "Allergy Test"};
 
-    Window1(){
+    public Window1(){
         //Frame creation
         frame = new JFrame("Lab Assist");
         frame.getContentPane().setBackground(Color.orange);
@@ -67,9 +70,9 @@ public class Window1 implements ActionListener
         male.addActionListener(this);
         female = new Radios("Female");
         female.addActionListener(this);
-        ButtonGroup grp = new ButtonGroup();
-        grp.add(male);
-        grp.add(female);
+        grp1 = new ButtonGroup();
+        grp1.add(male);
+        grp1.add(female);
         male.setBounds(380,390,250,100);
         female.setBounds(630,390,250,100);
         frame.add(male);
@@ -78,9 +81,11 @@ public class Window1 implements ActionListener
         //Panel with Choice CheckBox
         pan = new JPanel();
         pan.setLayout(new GridLayout(4,2));
+        grp2 = new ButtonGroup();
         for (int i=0; i<=7; i++){
             checkBox[i] = new CheckBox(test[i]);
             checkBox[i].addActionListener(this);
+            grp2.add(checkBox[i]);
             pan.add(checkBox[i]);
         }
         pan.setBounds(380,490,900,300);
@@ -109,13 +114,24 @@ public class Window1 implements ActionListener
                     System.out.println("Male");
                 else if (female.isSelected())
                     System.out.println("Female");
-                for (int i = 0; i <= 7; i++) {
-                    if (checkBox[i].isSelected()) {
-                        System.out.println(test[i]);
-                    }
+                if (checkBox[0].isSelected()){
+                    Complete_Blood_Test_Window cbc = new Complete_Blood_Test_Window();
+                } else if (checkBox[1].isSelected()) {
+                    Urinalysis_Window uw = new Urinalysis_Window();
+                } else if (checkBox[2].isSelected()) {
+                    Thyroid_Test_Window ttw = new Thyroid_Test_Window();
+                } else if (checkBox[3].isSelected()) {
+                    Diabetes_Test_Window dtw = new Diabetes_Test_Window();
+                } else if (checkBox[4].isSelected()) {
+                    STD_Test_Window std = new STD_Test_Window();
+                } else if (checkBox[5].isSelected()) {
+                    Cholesterol_Test_Window ctw = new Cholesterol_Test_Window();
+                } else if (checkBox[6].isSelected()) {
+                    Drug_Test_Window dtw = new Drug_Test_Window();
+                } else if (checkBox[7].isSelected()) {
+                    Allergy_Test_Window atw = new Allergy_Test_Window();
                 }
                 frame.dispose();
-                Window2 win2 = new Window2();
             }
         }
 
