@@ -1,8 +1,7 @@
 package Windows;
 
-import Components.Buttons;
-import Components.Fields;
-import Components.Labels;
+import Components.*;
+import JDBC.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -66,6 +65,7 @@ public class Complete_Blood_Test_Window implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if (e.getSource()==button){
             for (int j = 0; j<=9; j++){
                 System.out.println(Your_Result[j].getText());

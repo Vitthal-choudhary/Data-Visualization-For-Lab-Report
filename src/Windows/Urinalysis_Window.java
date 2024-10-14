@@ -12,14 +12,13 @@ import java.awt.event.ActionListener;
 public class Urinalysis_Window implements ActionListener
 {
     JFrame root;
-    Labels[] Attributes = new Labels[12];
-    String[] l1 = {"COLOR URINE", "APPEARANCE URINE", "SPECIFIC GRAVITY URINE IRIS",
-                    "PH URINE", "PROTEIN URINE", "GLUCOSE URINE IRIS", "KETONE URINE",
+    Labels[] Attributes = new Labels[10];
+    String[] l1 = {"COLOR URINE", "PH URINE", "PROTEIN URINE", "GLUCOSE URINE IRIS", "KETONE URINE",
                     "BILIRUBIN URINE", "BLOOD URINE", "NITRITE URINE", "UROBILINOGEN URINE",
                     "LEUKOCYTE ESTERASE URINE"};
-    Fields[] Your_Result = new Fields[12];
+    Fields[] Your_Result = new Fields[10];
     JPanel p1, p2;
-    GridLayout layout = new GridLayout(12,1);
+    GridLayout layout = new GridLayout(10,1);
     Buttons button;
 
     public Urinalysis_Window(){
@@ -40,7 +39,7 @@ public class Urinalysis_Window implements ActionListener
         p1.setBackground(Color.orange);
         p1.setLayout(layout);
         layout.setVgap(8);
-        for (int i=0; i<=11; i++){
+        for (int i=0; i<=9; i++){
             Attributes[i] = new Labels(l1[i],30);
             p1.add(Attributes[i]);
         }
@@ -51,7 +50,7 @@ public class Urinalysis_Window implements ActionListener
         p2 = new JPanel();
         p2.setBackground(Color.orange);
         p2.setLayout(layout);
-        for (int i=0; i<=11; i++){
+        for (int i=0; i<=9; i++){
             Your_Result[i] = new Fields();
             p2.add(Your_Result[i]);
         }

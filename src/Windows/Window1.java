@@ -1,6 +1,7 @@
 package Windows;
 
 import Components.*;
+import JDBC.Add_to_Patient;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,10 +11,11 @@ import java.util.Objects;
 
 public class Window1 implements ActionListener
 {
+    Add_to_Patient subject = new Add_to_Patient();
     JFrame frame;
     JPanel pan;
-    Labels title, name_label, age_label, sex_label, Choice_Label;
-    Fields name_field, age_field;
+    Labels title, name_label, age_label, sex_label, Choice_Label, patient_id_label;
+    Fields name_field, age_field, patient_id_field;
     Buttons butt;
     ButtonGroup grp1, grp2;
     Radios male, female;
@@ -37,33 +39,43 @@ public class Window1 implements ActionListener
 
         //name label
         name_label = new Labels("Name", 30);
-        name_label.setBounds(30,150,300,100);
+        name_label.setBounds(30,150,200,60);
         frame.add(name_label);
 
         //age label
         age_label = new Labels("Age", 30);
-        age_label.setBounds(30,270,300,100);
+        age_label.setBounds(30,270,200,60);
         frame.add(age_label);
 
         //sex label
         sex_label = new Labels("Sex", 30);
-        sex_label.setBounds(30,390,300,100);
+        sex_label.setBounds(30,390,200,60);
         frame.add(sex_label);
 
         //choice label
-        Choice_Label = new Labels("Testing For :", 30);
-        Choice_Label.setBounds(30,510,300,100);
+        Choice_Label = new Labels("Testing For", 30);
+        Choice_Label.setBounds(30,510,200,60);
         frame.add(Choice_Label);
+
+        // Patient ID label
+        patient_id_label = new Labels("Patient ID", 30);
+        patient_id_label.setBounds(800, 150, 200, 60);
+        frame.add(patient_id_label);
 
         //name field
         name_field = new Fields();
-        name_field.setBounds(380,150,500,100);
+        name_field.setBounds(380,150,300,60);
         frame.add(name_field);
 
         //age field
         age_field = new Fields();
-        age_field.setBounds(380,270,500,100);
+        age_field.setBounds(380,270,300,60);
         frame.add(age_field);
+
+        // Patient ID field
+        patient_id_field = new Fields();
+        patient_id_field.setBounds(1020, 150, 300, 60);
+        frame.add(patient_id_field);
 
         //Radio Buttons for gender
         male = new Radios("Male");
@@ -108,32 +120,42 @@ public class Window1 implements ActionListener
                 JOptionPane.showMessageDialog(null, "Fill the Details", "Warning", JOptionPane.ERROR_MESSAGE);
             }
             else {
-                System.out.println(name_field.getText());
-                System.out.println(age_field.getText());
+                String name = name_field.getText();
+                String gender = "", test = "";
+                int age = Integer.parseInt(age_field.getText());
+                int id = Integer.parseInt(patient_id_field.getText());
                 if (male.isSelected())
-                    System.out.println("Male");
+                    gender = "Male";
                 else if (female.isSelected())
-                    System.out.println("Female");
+                    gender = "Female";
                 if (checkBox[0].isSelected()){
+                    test = "Complete Blood Test";
                     Complete_Blood_Test_Window cbc = new Complete_Blood_Test_Window();
                 } else if (checkBox[1].isSelected()) {
+                    test = "Urinalysis";
                     Urinalysis_Window uw = new Urinalysis_Window();
                 } else if (checkBox[2].isSelected()) {
+                    test = "Thyroid Test";
                     Thyroid_Test_Window ttw = new Thyroid_Test_Window();
                 } else if (checkBox[3].isSelected()) {
+                    test = "Diabetes";
                     Diabetes_Test_Window dtw = new Diabetes_Test_Window();
                 } else if (checkBox[4].isSelected()) {
+                    test = "Sexually Transmitted Disease";
                     STD_Test_Window std = new STD_Test_Window();
                 } else if (checkBox[5].isSelected()) {
+                    test = "Cholesterol Test";
                     Cholesterol_Test_Window ctw = new Cholesterol_Test_Window();
                 } else if (checkBox[6].isSelected()) {
+                    test = "Drug Test";
                     Drug_Test_Window dtw = new Drug_Test_Window();
                 } else if (checkBox[7].isSelected()) {
+                    test = "Allergy Test";
                     Allergy_Test_Window atw = new Allergy_Test_Window();
                 }
                 frame.dispose();
+                subject.Add_Patient(id, name,age,gender,test);
             }
         }
-
     }
 }

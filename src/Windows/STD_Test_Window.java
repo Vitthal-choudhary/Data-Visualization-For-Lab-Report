@@ -29,7 +29,7 @@ public class STD_Test_Window implements ActionListener
 
         //Title
         Labels title = new Labels("Sexually Transmitted Disease Test", 30);
-        title.setBounds(450,0,500,100);
+        title.setBounds(450,0,600,100);
         root.add(title);
 
         // Labels for attributes
