@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class Complete_Blood_Test_Window implements ActionListener
 {
@@ -65,11 +66,12 @@ public class Complete_Blood_Test_Window implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        float[] arr = new float[10];
         if (e.getSource()==button){
             for (int j = 0; j<=9; j++){
-                System.out.println(Your_Result[j].getText());
+                arr[j] = Float.parseFloat(Your_Result[j].getText());
             }
+            Blood_test subject = new Blood_test(arr);
             root.dispose();
         }
     }

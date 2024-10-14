@@ -1,7 +1,7 @@
 package Windows;
 
 import Components.*;
-import JDBC.Add_to_Patient;
+import JDBC.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 
-public class Window1 implements ActionListener
+public class Window1 implements ActionListener, Patient
 {
-    Add_to_Patient subject = new Add_to_Patient();
+//    Add_to_Patient subject = new Add_to_Patient();
     JFrame frame;
     JPanel pan;
     Labels title, name_label, age_label, sex_label, Choice_Label, patient_id_label;
@@ -23,7 +23,6 @@ public class Window1 implements ActionListener
     String[] test = {"Complete Blood Test", "Urinalysis", "Thyroid Test",
             "Diabetes Test", "Sexually Transmitted Diseases",
             "Cholesterol Test", "Drug Test", "Allergy Test"};
-
     public Window1(){
         //Frame creation
         frame = new JFrame("Lab Assist");
@@ -130,31 +129,38 @@ public class Window1 implements ActionListener
                     gender = "Female";
                 if (checkBox[0].isSelected()){
                     test = "Complete Blood Test";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Complete_Blood_Test_Window cbc = new Complete_Blood_Test_Window();
                 } else if (checkBox[1].isSelected()) {
                     test = "Urinalysis";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Urinalysis_Window uw = new Urinalysis_Window();
                 } else if (checkBox[2].isSelected()) {
                     test = "Thyroid Test";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Thyroid_Test_Window ttw = new Thyroid_Test_Window();
                 } else if (checkBox[3].isSelected()) {
                     test = "Diabetes";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Diabetes_Test_Window dtw = new Diabetes_Test_Window();
                 } else if (checkBox[4].isSelected()) {
                     test = "Sexually Transmitted Disease";
+                    patient.Add_Patient(id, name,age,gender,test);
                     STD_Test_Window std = new STD_Test_Window();
                 } else if (checkBox[5].isSelected()) {
                     test = "Cholesterol Test";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Cholesterol_Test_Window ctw = new Cholesterol_Test_Window();
                 } else if (checkBox[6].isSelected()) {
                     test = "Drug Test";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Drug_Test_Window dtw = new Drug_Test_Window();
                 } else if (checkBox[7].isSelected()) {
                     test = "Allergy Test";
+                    patient.Add_Patient(id, name,age,gender,test);
                     Allergy_Test_Window atw = new Allergy_Test_Window();
                 }
                 frame.dispose();
-                subject.Add_Patient(id, name,age,gender,test);
             }
         }
     }

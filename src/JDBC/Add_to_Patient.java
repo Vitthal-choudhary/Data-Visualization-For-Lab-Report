@@ -54,14 +54,9 @@ public class Add_to_Patient
             statement.setString(4,patient_sex);
             statement.executeUpdate();
             System.out.println("Executed");
-            statement.close();
-            con.close();
         }
         catch (Exception e){
             System.out.println("Not Able to connect");
         }
-    }
-    public void Blood_Test(){
-
     }
 }
