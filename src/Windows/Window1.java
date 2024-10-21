@@ -130,35 +130,35 @@ public class Window1 implements ActionListener, Patient
                 if (checkBox[0].isSelected()){
                     test = "Complete Blood Test";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Complete_Blood_Test_Window cbc = new Complete_Blood_Test_Window();
+                    new Complete_Blood_Test_Window();
                 } else if (checkBox[1].isSelected()) {
                     test = "Urinalysis";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Urinalysis_Window uw = new Urinalysis_Window();
+                    new Urinalysis_Window();
                 } else if (checkBox[2].isSelected()) {
                     test = "Thyroid Test";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Thyroid_Test_Window ttw = new Thyroid_Test_Window();
+                    new Thyroid_Test_Window();
                 } else if (checkBox[3].isSelected()) {
                     test = "Diabetes";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Diabetes_Test_Window dtw = new Diabetes_Test_Window();
+                    new Diabetes_Test_Window();
                 } else if (checkBox[4].isSelected()) {
                     test = "Sexually Transmitted Disease";
                     patient.Add_Patient(id, name,age,gender,test);
-                    STD_Test_Window std = new STD_Test_Window();
+                    new STD_Test_Window();
                 } else if (checkBox[5].isSelected()) {
                     test = "Cholesterol Test";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Cholesterol_Test_Window ctw = new Cholesterol_Test_Window();
+                    new Cholesterol_Test_Window();
                 } else if (checkBox[6].isSelected()) {
                     test = "Drug Test";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Drug_Test_Window dtw = new Drug_Test_Window();
+                    new Drug_Test_Window();
                 } else if (checkBox[7].isSelected()) {
                     test = "Allergy Test";
                     patient.Add_Patient(id, name,age,gender,test);
-                    Allergy_Test_Window atw = new Allergy_Test_Window();
+                    new Allergy_Test_Window();
                 }
                 frame.dispose();
             }

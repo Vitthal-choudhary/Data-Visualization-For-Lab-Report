@@ -3,6 +3,7 @@ package Windows;
 import Components.Buttons;
 import Components.Fields;
 import Components.Labels;
+import JDBC.Urinalysis;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,13 +13,13 @@ import java.awt.event.ActionListener;
 public class Urinalysis_Window implements ActionListener
 {
     JFrame root;
-    Labels[] Attributes = new Labels[10];
-    String[] l1 = {"COLOR URINE", "PH URINE", "PROTEIN URINE", "GLUCOSE URINE IRIS", "KETONE URINE",
-                    "BILIRUBIN URINE", "BLOOD URINE", "NITRITE URINE", "UROBILINOGEN URINE",
-                    "LEUKOCYTE ESTERASE URINE"};
-    Fields[] Your_Result = new Fields[10];
+    Labels[] Attributes = new Labels[9];
+    String[] l1 = {"COLOR URINE", "PROTEIN URINE", "GLUCOSE URINE IRIS", "KETONE URINE",
+            "BILIRUBIN URINE", "NITRITE URINE", "LEUKOCYTE ESTERASE URINE",
+            "UROBILINOGEN URINE", "PH URINE"};
+    Fields[] Your_Result = new Fields[9];
     JPanel p1, p2;
-    GridLayout layout = new GridLayout(10,1);
+    GridLayout layout = new GridLayout(9,1);
     Buttons button;
 
     public Urinalysis_Window(){
@@ -39,7 +40,7 @@ public class Urinalysis_Window implements ActionListener
         p1.setBackground(Color.orange);
         p1.setLayout(layout);
         layout.setVgap(8);
-        for (int i=0; i<=9; i++){
+        for (int i=0; i<=8; i++){
             Attributes[i] = new Labels(l1[i],30);
             p1.add(Attributes[i]);
         }
@@ -50,7 +51,7 @@ public class Urinalysis_Window implements ActionListener
         p2 = new JPanel();
         p2.setBackground(Color.orange);
         p2.setLayout(layout);
-        for (int i=0; i<=9; i++){
+        for (int i=0; i<=8; i++){
             Your_Result[i] = new Fields();
             p2.add(Your_Result[i]);
         }
@@ -70,9 +71,14 @@ public class Urinalysis_Window implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==button){
-            for (int j = 0; j<=9; j++){
-                System.out.println(Your_Result[j].getText());
+            String[] a = new String[7];
+            float b,c;
+            for (int j = 0; j<=6; j++){
+                a[j] = Your_Result[j].getText();
             }
+            b = Float.parseFloat(Your_Result[7].getText());
+            c = Float.parseFloat(Your_Result[8].getText());
+            new Urinalysis(a,b,c);
             root.dispose();
         }
     }
