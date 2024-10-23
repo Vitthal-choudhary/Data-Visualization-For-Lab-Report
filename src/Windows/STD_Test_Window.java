@@ -3,6 +3,7 @@ package Windows;
 import Components.Buttons;
 import Components.Fields;
 import Components.Labels;
+import JDBC.STD;
 
 import javax.swing.*;
 import java.awt.*;
@@ -69,9 +70,11 @@ public class STD_Test_Window implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
+            String[] arr = new String[9];
             for (int j = 0; j <= 8; j++) {
-                System.out.println(Your_Result[j].getText());
+                arr[j] = Your_Result[j].getText();
             }
+            new STD(arr);
             root.dispose();
         }
     }

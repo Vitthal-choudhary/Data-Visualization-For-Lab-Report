@@ -3,6 +3,7 @@ package Windows;
 import Components.Buttons;
 import Components.Fields;
 import Components.Labels;
+import JDBC.Diabetes;
 
 import javax.swing.*;
 import java.awt.*;
@@ -66,9 +67,11 @@ public class Diabetes_Test_Window implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
+            float[] arr = new float[3];
             for (int j = 0; j <= 2; j++) {
-                System.out.println(Your_Result[j].getText());
+                arr[j] = Float.parseFloat(Your_Result[j].getText());
             }
+            new Diabetes(arr);
             root.dispose();
         }
     }

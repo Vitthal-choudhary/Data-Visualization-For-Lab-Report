@@ -3,6 +3,7 @@ package Windows;
 import Components.Buttons;
 import Components.Fields;
 import Components.Labels;
+import JDBC.Cholesterol;
 
 import javax.swing.*;
 import java.awt.*;
@@ -68,9 +69,11 @@ public class Cholesterol_Test_Window implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
+            float[] arr = new float[6];
             for (int j = 0; j <= 5; j++) {
-                System.out.println(Your_Result[j].getText());
+                arr[j] = Float.parseFloat(Your_Result[j].getText());
             }
+            new Cholesterol(arr);
             root.dispose();
         }
     }

@@ -31,7 +31,7 @@ public class Add_to_Patient
                 query = "INSERT INTO diabetes(patient_id,name, age, sex) VALUES(?,?,?,?)";
                 break;
             case "Sexually Transmitted Disease":
-                query = "INSERT INTO sexually_transmitted_disease(patient_id,name, age, sex) VALUES(?,?,?,?)";
+                query = "INSERT INTO sexual_disease(patient_id,name, age, sex) VALUES(?,?,?,?)";
                 break;
             case "Cholesterol Test":
                 query = "INSERT INTO cholesterol(patient_id,name, age, sex) VALUES(?,?,?,?)";
@@ -56,7 +56,7 @@ public class Add_to_Patient
             System.out.println("Executed");
         }
         catch (Exception e){
-            System.out.println("Not Able to connect");
+            e.printStackTrace();
         }
     }
 }

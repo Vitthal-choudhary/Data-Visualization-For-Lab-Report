@@ -26,7 +26,7 @@ public class Blood_test implements Patient{
             con.close();
         }
         catch (Exception e){
-            System.out.println("Not Able to connect");
+            e.printStackTrace();
         }
     }
 }

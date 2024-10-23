@@ -71,7 +71,7 @@ public class Complete_Blood_Test_Window implements ActionListener
             for (int j = 0; j<=9; j++){
                 arr[j] = Float.parseFloat(Your_Result[j].getText());
             }
-            Blood_test subject = new Blood_test(arr);
+            new Blood_test(arr);
             root.dispose();
         }
     }

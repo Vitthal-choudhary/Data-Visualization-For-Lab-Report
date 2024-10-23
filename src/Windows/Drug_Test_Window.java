@@ -3,6 +3,7 @@ package Windows;
 import Components.Buttons;
 import Components.Fields;
 import Components.Labels;
+import JDBC.Drugs;
 
 import javax.swing.*;
 import java.awt.*;
@@ -69,9 +70,11 @@ public class Drug_Test_Window implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
-            for (int j = 0; j <= 9; j++) {
-                System.out.println(Your_Result[j].getText());
+            float[] arr = new float[10];
+            for (int j = 0; j < arr.length; j++) {
+                arr[j] = Float.parseFloat(Your_Result[j].getText());
             }
+            new Drugs(arr);
             root.dispose();
         }
     }

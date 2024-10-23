@@ -40,9 +40,9 @@ create table thyroid(
     name varchar(40),
     age INT,
     sex varchar(7),
-    T4 DECIMAL(2,2),
-    T3 DECIMAL(2,2),
-    TSH DECIMAL(2,2)
+    T4 DECIMAL(5,2),
+    T3 DECIMAL(5,2),
+    TSH DECIMAL(5,2)
 );
 
 create table diabetes(
@@ -50,9 +50,9 @@ create table diabetes(
     name varchar(40),
     age INT,
     sex varchar(7),
-    Fasting_Blood_Sugar DECIMAL(2,2),
-    Post_Prandial_Blood_Sugar DECIMAL(2,2),
-    HAEMOGLOBIN_A1c DECIMAL(2,2)
+    Fasting_Blood_Sugar DECIMAL(5,2),
+    Post_Prandial_Blood_Sugar DECIMAL(5,2),
+    HAEMOGLOBIN_A1c DECIMAL(5,2)
 );
 
 create table Sexual_Disease(
@@ -76,12 +76,12 @@ CREATE TABLE Cholesterol(
     name varchar(40),
     age INT,
     sex varchar(7),
-    Total_Cholesterol DECIMAL(3,2),
-    LDL_Cholesterol DECIMAL(3,2),
-    HDL_Cholesterol DECIMAL(3,2),
-    Triglycerides DECIMAL(3,2),
-    Non_HDL_Cholesterol DECIMAL(3,2),
-    TG_To_HDL_Ratio DECIMAL(3,2)
+    Total_Cholesterol DECIMAL(5,2),
+    LDL_Cholesterol DECIMAL(5,2),
+    HDL_Cholesterol DECIMAL(5,2),
+    Triglycerides DECIMAL(5,2),
+    Non_HDL_Cholesterol DECIMAL(5,2),
+    TG_To_HDL_Ratio DECIMAL(5,2)
 );
 
 CREATE TABLE Drug(
@@ -89,16 +89,16 @@ CREATE TABLE Drug(
     name varchar(40),
     age INT,
     sex varchar(7),
-    AMPHETAMINES DECIMAL(3,2),
-    BARBITURATES DECIMAL(3,2),
-    BENZODIAZEPINES DECIMAL(3,2),
-    COCAINE_METABOLITES DECIMAL(3,2),
-    MARIJUANA_METABOLITES DECIMAL(3,2),
-    MATHADONE DECIMAL(3,2),
-    METHAQUALONE DECIMAL(3,2),
-    OPIATES DECIMAL(3,2),
-    PHENCYCLIDINE DECIMAL(3,2),
-    PROPOXYPHENE DECIMAL(3,2)
+    AMPHETAMINES DECIMAL(5,2),
+    BARBITURATES DECIMAL(5,2),
+    BENZODIAZEPINES DECIMAL(5,2),
+    COCAINE_METABOLITES DECIMAL(5,2),
+    MARIJUANA_METABOLITES DECIMAL(5,2),
+    MATHADONE DECIMAL(5,2),
+    METHAQUALONE DECIMAL(5,2),
+    OPIATES DECIMAL(5,2),
+    PHENCYCLIDINE DECIMAL(5,2),
+    PROPOXYPHENE DECIMAL(5,2)
 );
 
 CREATE TABLE Allergy(
@@ -106,18 +106,18 @@ CREATE TABLE Allergy(
     name varchar(40),
     age INT,
     sex varchar(7),
-    Scallop DECIMAL(3,2),
-    Cashew_Nut DECIMAL(3,2),
-    Egg_White DECIMAL(3,2),
-    Cow_Milk DECIMAL(3,2),
-    CodFish DECIMAL(3,2),
-    Wheat DECIMAL(3,2),
-    Sesame_Seed DECIMAL(3,2),
-    Peanut DECIMAL(3,2),
-    Soybean DECIMAL(3,2),
-    Almond DECIMAL(3,2),
-    Shrimp DECIMAL(3,2),
-    Tuna DECIMAL(3,2),
-    Salmon DECIMAL(3,2),
-    Walnut DECIMAL(3,2)
+    Scallop DECIMAL(5,2),
+    Cashew_Nut DECIMAL(5,2),
+    Egg_White DECIMAL(5,2),
+    Cow_Milk DECIMAL(5,2),
+    CodFish DECIMAL(5,2),
+    Wheat DECIMAL(5,2),
+    Sesame_Seed DECIMAL(5,2),
+    Peanut DECIMAL(5,2),
+    Soybean DECIMAL(5,2),
+    Almond DECIMAL(5,2),
+    Shrimp DECIMAL(5,2),
+    Tuna DECIMAL(5,2),
+    Salmon DECIMAL(5,2),
+    Walnut DECIMAL(5,2)
 );
