@@ -70,9 +70,9 @@ public class Drug_Test_Window implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
-            float[] arr = new float[10];
+            int[] arr = new int[10];
             for (int j = 0; j < arr.length; j++) {
-                arr[j] = Float.parseFloat(Your_Result[j].getText());
+                arr[j] = Integer.parseInt(Your_Result[j].getText());
             }
             new Drugs(arr);
             root.dispose();

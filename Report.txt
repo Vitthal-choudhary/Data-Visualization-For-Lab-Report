@@ -1,0 +1,16 @@
+Patient ID: 1
+Patient Name: Buslim Adnan
+Patient Age: 18
+Patient Sex: Male
+
+
+AMPHETAMINES: 1200    Positive
+BARBITURATES: 150    Normal Range
+BENZODIAZEPINES: 120    Normal Range
+COCAINE_METABOLITES: 361    Positive
+MARIJUANA_METABOLITES: 250    Positive
+MATHADONE: 364    Positive
+METHAQUALONE: 945    Positive
+OPIATES: 12    Normal Range
+PHENCYCLIDINE: 153    Positive
+PROPOXYPHENE: 64    Normal Range

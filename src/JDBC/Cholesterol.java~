@@ -48,7 +48,7 @@ public class Cholesterol implements Patient
                 writer.write("\nLDL Cholesterol: " + rs.getFloat(6) + ((rs.getFloat(6) < 130.0) ? "    Normal Range" : "    High"));
                 writer.write("\nHDL Cholesterol: " + rs.getFloat(7) + ((rs.getFloat(7) > 60.0) ? "    Normal Range" : "    High"));
                 writer.write("\nTriglycerides: " + rs.getFloat(8) + ((rs.getFloat(8) < 150.0) ? "    Normal Range" : "    High"));
-                writer.write("\nNon-HDL Cholesterol: " + rs.getFloat(9) + ((rs.getFloat(9) < 130.0) ? "    Normal Range" : "    High"));
+                writer.write("\nNon-HDL Cholesterol: " + rs.getFloat(9) + ((rs.getFloat(9) < 50.0) ? "    Normal Range" : "    High"));
                 writer.write("\nTG To HDL Ratio: " + rs.getFloat(10) + ((rs.getFloat(10) < 3.0) ? "    Normal Range" : "    High"));
             }
             writer.close();
