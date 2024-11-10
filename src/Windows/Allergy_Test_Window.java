@@ -76,6 +76,7 @@ public class Allergy_Test_Window implements ActionListener {
             }
             new Allergy(a);
             root.dispose();
+            new Final_Window();
         }
     }
 }

@@ -76,6 +76,7 @@ public class Drug_Test_Window implements ActionListener
             }
             new Drugs(arr);
             root.dispose();
+            new Final_Window();
         }
     }
 }

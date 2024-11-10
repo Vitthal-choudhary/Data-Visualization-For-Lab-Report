@@ -161,6 +161,7 @@ public class Window1 implements ActionListener, Patient
                     new Allergy_Test_Window();
                 }
                 frame.dispose();
+                new Final_Window();
             }
         }
     }

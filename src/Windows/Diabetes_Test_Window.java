@@ -73,6 +73,7 @@ public class Diabetes_Test_Window implements ActionListener {
             }
             new Diabetes(arr);
             root.dispose();
+            new Final_Window();
         }
     }
 }

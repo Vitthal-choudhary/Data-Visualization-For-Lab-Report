@@ -1,16 +1,20 @@
 Patient ID: 1
-Patient Name: Buslim Adnan
+Patient Name: Vitthal
 Patient Age: 18
 Patient Sex: Male
 
 
-AMPHETAMINES: 1200    Positive
-BARBITURATES: 150    Normal Range
-BENZODIAZEPINES: 120    Normal Range
-COCAINE_METABOLITES: 361    Positive
-MARIJUANA_METABOLITES: 250    Positive
-MATHADONE: 364    Positive
-METHAQUALONE: 945    Positive
-OPIATES: 12    Normal Range
-PHENCYCLIDINE: 153    Positive
-PROPOXYPHENE: 64    Normal Range
+Scallop: 5.0    Allergic
+Cashew Nut: 24.0    Allergic
+Egg White: 1.0    Allergic
+Cow Milk: 2.0    Allergic
+Cod Fish: 1.0    Allergic
+Wheat: 1.0    Allergic
+Sesame Seed: 1.0    Allergic
+Peanut: 1.0    Allergic
+Soybean: 2.0    Allergic
+Almond: 5.0    Allergic
+Shrimp: 69.0    Allergic
+Tuna: 4.0    Allergic
+Salmon: 1.0    Allergic
+Walnut: 1.0    Allergic

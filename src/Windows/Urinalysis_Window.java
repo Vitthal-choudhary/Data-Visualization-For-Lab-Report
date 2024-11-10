@@ -80,6 +80,7 @@ public class Urinalysis_Window implements ActionListener
             c = Float.parseFloat(Your_Result[8].getText());
             new Urinalysis(a,b,c);
             root.dispose();
+            new Final_Window();
         }
     }
 }

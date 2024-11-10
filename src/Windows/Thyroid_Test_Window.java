@@ -74,6 +74,7 @@ public class Thyroid_Test_Window implements ActionListener
             }
             new Thyroid(arr);
             root.dispose();
+            new Final_Window();
         }
     }
 }

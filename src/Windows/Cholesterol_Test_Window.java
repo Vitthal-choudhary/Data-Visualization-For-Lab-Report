@@ -75,6 +75,7 @@ public class Cholesterol_Test_Window implements ActionListener
             }
             new Cholesterol(arr);
             root.dispose();
+            new Final_Window();
         }
     }
 }

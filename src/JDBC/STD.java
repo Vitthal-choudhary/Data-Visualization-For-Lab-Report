@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Arrays;
 
 public class STD implements Patient{
     String url = "jdbc:mysql://localhost:3306/lab_data";

@@ -73,6 +73,7 @@ public class Complete_Blood_Test_Window implements ActionListener
             }
             new Blood_test(arr);
             root.dispose();
+            new Final_Window();
         }
     }
 }
